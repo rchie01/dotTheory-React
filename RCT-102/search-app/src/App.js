@@ -1,4 +1,4 @@
-import { Container, Row, Col, Card, Button } from 'react-bootstrap'
+import { Container, Row, Col, Card } from 'react-bootstrap'
 import SearchForm from './components/SearchForm';
 import Results from './components/Results';
 
@@ -16,11 +16,9 @@ function App() {
                 A reliable search app for your complete disposal!
               </Card.Text>
             </Row>
-
             <Row>
               <SearchForm />
             </Row>
-
             <Row>
               <Results />
             </Row>
