@@ -1,12 +1,12 @@
 const Header = (props) =>{
-    console.log(props)
+    console.log(props);
     return (
         <header>
             <h1>{ props.header }</h1>
             <span className="stats">Players: { props.activePlayers }</span>
         </header>
-    )
-}
+    );
+};
 
 const Player = (props) => {
     return (
@@ -17,29 +17,30 @@ const Player = (props) => {
             </span>
             <Counter />
         </div>
-    )
-}
-class Counter extends React.Component{
+    );
+};
 
+class Counter extends React.Component{
     constructor(){
-        super()
+        super();
         this.state={
             playerScore: 0
-        }
-    }
+        };
+    };
   
     appPoint = () => {
         this.setState( (prevState) => ({
             playerScore: prevState.playerScore + 1
-        }))
-    }
+        }));
+    };
+
     deductPoint = () => {
         if(this.state.playerScore > 0 ){
             this.setState( (prevState) => ({
                 playerScore: prevState.playerScore - 1
-            }))
+            }));
         }
-    }
+    };
 
     render(){
         return (
@@ -48,14 +49,14 @@ class Counter extends React.Component{
                 <span className="counter-score">{this.state.playerScore}</span>
                 <button className="counter-action increment" onClick = {() => this.appPoint()}>+</button>
             </div>
-        )
-    }
-}
+        );
+    };
+};
 
 class App extends React.Component {
 
     constructor(){
-        super()
+        super();
         this.state = {
             players: [
                 {
@@ -75,14 +76,14 @@ class App extends React.Component {
                     id: 4
                 }
             ]
-        }
-    }
+        };
+    };
 
     handleRemovePlayer = (id) => {
         this.setState( (prevState) => ({
             players: prevState.players.filter(player => player.id !== id)
-        }))
-    }
+        }));
+    };
     
     render(){
         return (
@@ -102,14 +103,14 @@ class App extends React.Component {
                         removePlayer={this.handleRemovePlayer}
                        
                         />
-                    )
+                    );
                 }) }
             </div>
-        )
-    }
-    
-}
+        );
+    };
+};
+
 ReactDOM.render(
     <App />,
     document.getElementById('root')
-)
+);
