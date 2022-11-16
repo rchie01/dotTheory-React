@@ -9,7 +9,7 @@ import Modal from './components/Modal';
 class App extends Component {
 
   handleClick = () => {
-    console.log("I was clicked!")
+    console.log("I was clicked!");
   }
   
   render() {
