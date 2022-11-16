@@ -12,12 +12,12 @@ class App extends Component {
     const newTeacher = teacher;
     this.setState((state)=> {
       if(newTeacher === state.teacher){
-        return null
+        return null;
       } else {
-        return ({teacher})
+        return ({teacher});
       }
     });
-  }
+  };
 
   render() {
     const teachers = ['jay', 'vivianne', 'ecma', 'json'];
