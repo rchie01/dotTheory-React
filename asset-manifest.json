@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/dotTheory-React/static/css/main.cce71042.css",
+    "main.js": "/dotTheory-React/static/js/main.1aeb7b2a.js",
+    "index.html": "/dotTheory-React/index.html",
+    "main.cce71042.css.map": "/dotTheory-React/static/css/main.cce71042.css.map",
+    "main.1aeb7b2a.js.map": "/dotTheory-React/static/js/main.1aeb7b2a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cce71042.css",
+    "static/js/main.1aeb7b2a.js"
+  ]
+}
