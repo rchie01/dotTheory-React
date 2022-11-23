@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/dotTheory-React/RCT-304/course-directory/static/css/main.cce71042.css",
-    "main.js": "/dotTheory-React/RCT-304/course-directory/static/js/main.8de0e681.js",
+    "main.js": "/dotTheory-React/RCT-304/course-directory/static/js/main.4ca300c0.js",
     "index.html": "/dotTheory-React/RCT-304/course-directory/index.html",
     "main.cce71042.css.map": "/dotTheory-React/RCT-304/course-directory/static/css/main.cce71042.css.map",
-    "main.8de0e681.js.map": "/dotTheory-React/RCT-304/course-directory/static/js/main.8de0e681.js.map"
+    "main.4ca300c0.js.map": "/dotTheory-React/RCT-304/course-directory/static/js/main.4ca300c0.js.map"
   },
   "entrypoints": [
     "static/css/main.cce71042.css",
-    "static/js/main.8de0e681.js"
+    "static/js/main.4ca300c0.js"
   ]
 }
