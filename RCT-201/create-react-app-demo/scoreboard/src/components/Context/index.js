@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import { createContext } from "react";
 
 const ScoreboardContext = createContext();
@@ -27,29 +27,18 @@ export const Provider = ({ children }) => {
     },
   ]);
 
-  const [highScore, setHighScore] = useState();
-
   const newID = useRef(5);
 
-  useEffect(() => {
-    const playerScores = players.map((player) => player.score);
-    setHighScore(Math.max(...playerScores));
-  }, [players]);
+  const handlePlayerScore = (index, delta) => {
+    setPlayers(prevState => {
+      const updatedPlayers = [...prevState]
+      const updatedPlayer = {...updatedPlayers[index]}
 
-  const handlePlayerScore = (id, delta) => {
-    setPlayers((prevState) =>
-      prevState.map((player) => {
-        if (player.id === id) {
-          return {
-            name: player.name,
-            score: player.score + delta,
-            id: player.id,
-          };
-        }
+      updatedPlayer.score += delta
+      updatedPlayers[index] = updatedPlayer
 
-        return player;
-      })
-    );
+      return updatedPlayers
+    })
   };
 
   const handleRemovePlayer = (id) => {
@@ -70,13 +59,12 @@ export const Provider = ({ children }) => {
   return (
     <ScoreboardContext.Provider
       value={{
-        players: players,
+        players,
         actions: {
           handleScore: handlePlayerScore,
           removePlayer: handleRemovePlayer,
           addPlayer: handleAddPlayer,
-        },
-        highScore: highScore
+        }
       }}
     >
       {children}

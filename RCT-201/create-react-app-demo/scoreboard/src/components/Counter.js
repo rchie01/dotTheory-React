@@ -7,9 +7,9 @@ const Counter = ({index}) => {
       {({players, actions})=>{
         return(
           <div className="counter">
-            <button className="counter-action decrement" onClick={()=>{actions.handleScore(players[index].id, -1)}}> - </button>
+            <button className="counter-action decrement" onClick={()=>{actions.handleScore(index, -1)}}> - </button>
             <span className="counter-score">{players[index].score}</span>
-            <button className="counter-action increment" onClick={()=>{actions.handleScore(players[index].id, 1)}}> + </button>
+            <button className="counter-action increment" onClick={()=>{actions.handleScore(index, 1)}}> + </button>
           </div> 
         )
       }}
