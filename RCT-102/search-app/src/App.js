@@ -1,11 +1,10 @@
-import { Container, Row, Col, Card } from 'react-bootstrap'
-import SearchForm from './components/SearchForm';
-import Results from './components/Results';
+import { Container, Row, Col, Card } from "react-bootstrap";
+import SearchForm from "./components/SearchForm";
+import Results from "./components/Results";
 
-function App() {
-  return (
-    <div >
-      <Card>
+const App = () => (
+  <div>
+    <Card>
       <Card.Header>Search App</Card.Header>
       <Card.Body>
         <Container>
@@ -26,8 +25,7 @@ function App() {
         </Container>
       </Card.Body>
     </Card>
-    </div>
-  );
-}
+  </div>
+);
 
 export default App;
