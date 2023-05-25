@@ -26,7 +26,7 @@ const App = () => {
       id: 4,
     },
   ]);
-  const [highScore, setHighScore] = useState();
+  const [highScore, setHighScore] = useState(null);
   const newID = useRef(5);
 
   useEffect(() => {

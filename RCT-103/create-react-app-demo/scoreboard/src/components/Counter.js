@@ -10,9 +10,9 @@ const Counter = ({id, score, handleScore}) => (
 );
 
 Counter.propTypes = {
-  handleScore: PropTypes.func,
   id: PropTypes.number,
   score: PropTypes.number,
+  handleScore: PropTypes.func,
 };
 
 export default Counter;

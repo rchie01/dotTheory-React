@@ -11,7 +11,7 @@ const AddPlayerForm = ({ addPlayer }) => {
   };
 
   return (
-    <form onSubmit={(e) => handleSubmit(e)}>
+    <form onSubmit={handleSubmit}>
       <input type="text" ref={inputRef} placeholder="Enter player name" />
       <input type="submit" value="Add Player" />
     </form>

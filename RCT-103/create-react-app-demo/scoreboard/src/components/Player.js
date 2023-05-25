@@ -31,12 +31,12 @@ const playerPropsAreEqual = (prevProp, newProp) => {
 };
 
 Player.propTypes = {
-  id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
   score: PropTypes.number.isRequired,
-  removePlayer: PropTypes.func.isRequired,
-  handleScore: PropTypes.func.isRequired,
   isHighScore: PropTypes.bool.isRequired,
+  handleScore: PropTypes.func.isRequired,
+  removePlayer: PropTypes.func.isRequired,
 };
 
 export default memo(Player, playerPropsAreEqual);
