@@ -24,13 +24,7 @@ const Stats = ({ totalPlayers, listOfPlayers }) => {
 
 Stats.propTypes = {
   totalPlayers: PropTypes.number,
-  listOfPlayers: PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.string,
-      score: PropTypes.number,
-      id: PropTypes.number,
-    })
-  ),
+  listOfPlayers: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default Stats;
