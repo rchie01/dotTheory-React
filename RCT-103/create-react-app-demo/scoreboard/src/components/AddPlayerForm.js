@@ -1,36 +1,25 @@
-import React, { useRef } from 'react';
-import PropTypes from 'prop-types';
+import React, { useRef } from "react";
+import PropTypes from "prop-types";
 
-const AddPlayerForm = ({addPlayer}) => {
+const AddPlayerForm = ({ addPlayer }) => {
+  const inputRef = useRef();
 
-    let input = useRef();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    addPlayer(inputRef.current.value);
+    e.currentTarget.reset();
+  };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        addPlayer(input.current.value);
-        e.currentTarget.reset();
-    };
-
-    return(
-        <form onSubmit={(e)=>{handleSubmit(e)}}>
-            <input 
-                type="text"
-                ref={input}
-                placeholder="Enter player name"
-            />
-            <input 
-                type="submit"
-                value="Add Player"
-            />
-        </form>
-    );
+  return (
+    <form onSubmit={(e) => handleSubmit(e)}>
+      <input type="text" ref={inputRef} placeholder="Enter player name" />
+      <input type="submit" value="Add Player" />
+    </form>
+  );
 };
 
 AddPlayerForm.propTypes = {
-    addPlayer: PropTypes.func
+  addPlayer: PropTypes.func,
 };
-    
-
 
 export default AddPlayerForm;
-

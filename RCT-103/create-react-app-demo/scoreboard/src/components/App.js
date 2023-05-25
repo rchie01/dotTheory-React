@@ -8,72 +8,71 @@ const App = () => {
     {
       name: "Mag",
       score: 0,
-      id: 1
+      id: 1,
     },
     {
       name: "Ragus",
       score: 0,
-      id: 2
+      id: 2,
     },
     {
       name: "Syre",
       score: 0,
-      id: 3
+      id: 3,
     },
     {
       name: "Ves",
       score: 0,
-      id: 4
-    }
+      id: 4,
+    },
   ]);
-
   const [highScore, setHighScore] = useState();
-
   const newID = useRef(5);
 
   useEffect(() => {
-    const playerScores = players.map(player => player.score);
+    const playerScores = players.map((player) => player.score);
     setHighScore(Math.max(...playerScores));
   }, [players]);
 
   const handlePlayerScore = (id, delta) => {
-    setPlayers(prevState => prevState.map(player => {
-      if(player.id === id){
-        return {
-          name: player.name,
-          score: player.score + delta,
-          id: player.id
-        };
-      }
+    setPlayers((prevState) =>
+      prevState.map((player) => {
+        if (player.id === id) {
+          return {
+            name: player.name,
+            score: player.score + delta,
+            id: player.id,
+          };
+        }
 
-      return player;
-    }));
+        return player;
+      })
+    );
   };
 
   const handleRemovePlayer = (id) => {
-    setPlayers(prevState => prevState.filter(player => player.id !== id));
-  }
+    setPlayers((prevState) => prevState.filter((player) => player.id !== id));
+  };
 
   const handleAddPlayer = (name) => {
-    setPlayers(prevState => [
-      ...prevState,
-      {
-        name: name,
-        score: 0,
-        id: newID.current++
-      }
-    ]);
+    setPlayers((prevState) => {
+      return [
+        ...prevState,
+        {
+          name: name,
+          score: 0,
+          id: newID.current++,
+        },
+      ];
+    });
   };
- 
+
   return (
     <div className="scoreboard">
-      <Header
-        totalPlayers={players.length}
-        listOfPlayers={players}  
-      />
+      <Header totalPlayers={players.length} listOfPlayers={players} />
 
       {/* Players list */}
-      {players.map(player =>
+      {players.map((player) => (
         <Player
           name={player.name}
           id={player.id}
@@ -83,11 +82,9 @@ const App = () => {
           removePlayer={handleRemovePlayer}
           isHighScore={player.score === highScore && highScore !== 0}
         />
-      )}
+      ))}
 
-      <AddPlayerForm
-        addPlayer={handleAddPlayer}
-      />
+      <AddPlayerForm addPlayer={handleAddPlayer} />
     </div>
   );
 };
